@@ -1,0 +1,16 @@
+version: "3"
+services:
+  sample-app-js:
+    build: .
+    command: yarn serve
+    working_dir: /app/sample-app-js
+    ports:
+      - 1235:8080
+    volumes:
+      - ./:/app
+      - yarn-cache:/usr/local/share/.cache/yarn/v6
+    stdin_open: true
+    tty: true
+
+volumes:
+  yarn-cache:
