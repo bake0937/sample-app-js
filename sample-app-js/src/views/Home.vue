@@ -1,6 +1,10 @@
 <template>
-  <div class="home">
-    <h1>ホーム</h1>
+  <div>
+    <h1>ホーム画面</h1>
+    <p><router-link to="sign-in">サインイン</router-link></p>
+    <p><button @click="calendar">カレンダー</button></p>
+    <p><button @click="profile">プロフィール</button></p>
+    <p><button @click="share">共有</button></p>
   </div>
 </template>
 
@@ -8,5 +12,35 @@
 // @ is an alias to /src
 import { defineComponent } from '@vue/composition-api';
 
-export default defineComponent({});
+export default defineComponent({
+  setup(prop, context) {
+    const calendar = () => {
+      context.root.$router.push(
+        'calendar/month',
+        () => {},
+        () => {},
+      );
+    };
+    const profile = () => {
+      context.root.$router.push(
+        'profile',
+        () => {},
+        () => {},
+      );
+    };
+    const share = () => {
+      context.root.$router.push(
+        'share',
+        () => {},
+        () => {},
+      );
+    };
+
+    return {
+      calendar,
+      profile,
+      share,
+    };
+  },
+});
 </script>
