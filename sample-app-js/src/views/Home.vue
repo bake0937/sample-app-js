@@ -13,7 +13,7 @@
 import { defineComponent } from '@vue/composition-api';
 
 export default defineComponent({
-  setup(prop, context) {git p
+  setup(prop, context) {
     const calendar = () => {
       context.root.$router.push(
         'calendar/month',
